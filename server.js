@@ -8,26 +8,37 @@ require('dotenv').config()
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views/pages'));
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname + '/public/')));
 
 app.get('/', (req, res) => {
-    res.render("", {title: 'Projeto Front End - DH'})
+    res.render("index", {
+        title: 'DOIMZIM',
+        nav: ['Home', 'Sobre', 'Serviços', 'Contato']
+    })
 })
 
 app.get('/login', (req, res) => {
-    res.render("login")
+    res.render("login", {
+        title: "Faça login"
+    })
 })
 
 app.get('/esqueci-senha', (req, res) => {
-    res.render("esqueci-senha")
+    res.render("esqueci-senha", {
+        title: "Esqueci Minha Senha"
+    })
 })
 
 app.get('/registrar', (req, res) => {
-    res.render("registrar")
+    res.render("registrar", {
+        title: "Registrar"
+    })
 })
 
 app.get('/recupera-senha', (req, res) => {
-    res.render("recupera-senha")
+    res.render("recupera-senha", {
+        title: "Recuperar Senha"
+    })
 })
 
 

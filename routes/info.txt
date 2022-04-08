@@ -1,0 +1,1 @@
+criar logica de rotas manipuladas para que quando o usuário acessar seja feita as devidas comunicações com backend e tratado os erros
