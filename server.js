@@ -46,4 +46,10 @@ app.get('/recupera-senha', (req, res) => {
     })
 })
 
+app.get('/dashboard', (req, res) => {
+    res.render("dashPerfil", {
+        title: "Perfil"
+    })
+})
+
 app.listen(process.env.PORT, () => console.log(`Server FrontEnd: http://localhost:${process.env.PORT}`))
