@@ -12,29 +12,26 @@
                 <p>Rua das Pedrinhas, nº 664</p>
             </address>
             <div class="contatos">
-                <a href="#"><img class="contato__icones" src="img/footer-email.png" alt="email"></a>
-                <a href="#"><img class="contato__icones" src="img/footer-whats.png" alt="whatsapp"></a>
+                <% footer[0].forEach(contato => { %>
+                    <a href="<%= contato.url %>"><img class="contato__icones" src="<%= contato.icone %>" alt="email"></a>
+                <% })%>
             </div>
         </div>
         <div class="card">
             <h2>Nossos Serviços</h2>
             <ul class="card__servicos">
-                <li class="list_service"><a href="#">Serviço 01</a></li>
-                <li class="list_service"><a href="#">Serviço 02</a></li>
-                <li class="list_service"><a href="#">Serviço 03</a></li>
-                <li class="list_service"><a href="#">Serviço 04</a></li>
-                <li class="list_service"><a href="#">Serviço 05</a></li>
+                <% footer[1].forEach(item => { %>
+                    <li class="list_service"><a href="<%= "#" + item.toLowerCase() %>"><%= item %></a></li>
+                <% })%>
             </ul>
         </div>
         <div class="card">
             <h2>Redes Sociais</h2>
             <div class="rede_social">
-                <a href="#"><img class="redesocial__icones" src="img/footer-email.png" alt="email"></a>
-                <a href="#"><img class="redesocial__icones" src="img/footer-whats.png" alt="whatsapp"></a>
-                <a href="#"><img class="redesocial__icones" src="img/footer-whats.png" alt="whatsapp"></a>
-                <a href="#"><img class="redesocial__icones" src="img/footer-whats.png" alt="whatsapp"></a>
+                <% footer[2].forEach(redesocial => { %>
+                    <a href="<%= redesocial.url %>"><img class="redesocial__icones" src="<%= redesocial.icone %>" alt="email"></a>
+                <% })%>
             </div>
-
         </div>
     </div>
     <div class="creditos">

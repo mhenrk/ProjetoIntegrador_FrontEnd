@@ -6,7 +6,7 @@
         </div>
         <ul class="conteudo__menu">
             <% menulist.forEach(item => { %>
-                <li class="menuTxt"><a href="#"><%= item %></a></li>
+                <li class="menuTxt"><a href="<%= "#" + item.toLowerCase() %>"><%= item %></a></li>
             <% })%>
         </ul>
         <div class="btnEntrar">
