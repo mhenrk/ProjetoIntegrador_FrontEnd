@@ -5,11 +5,9 @@
             <img src="img/header-logo.png" alt="logo">
         </div>
         <ul class="conteudo__menu">
-            <li class="menuTxt"><a href="#">Home</a></li>
-            <li class="menuTxt"><a href="#">Sobre</a></li>
-            <li class="menuTxt"><a href="#">Serviços</a></li>
-            <li class="menuTxt"><a href="#">Depoimentos</a></li>
-            <li class="menuTxt"><a href="#">Contato</a></li>
+            <% menulist.forEach(item => { %>
+                <li class="menuTxt"><a href="#"><%= item %></a></li>
+            <% })%>
         </ul>
         <div class="btnEntrar">
             <span><a href="login">Entrar</a></span>
