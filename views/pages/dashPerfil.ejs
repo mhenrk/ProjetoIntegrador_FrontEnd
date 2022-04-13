@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/dashboard-perfil.css" type="text/css">
+    <link rel="stylesheet" href="css/dashboard-registro.css" type="text/css">
+    <!-- FONT AWSOME -->
+    <script src="https://kit.fontawesome.com/8738c5e42e.js" crossorigin="anonymous"></script>
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="img/dash-logo.png" alt="logo">
+            </div>
+
+            <span class="logo_name">Anymals</span>
+        </div>
+
+        <div class="menu-itens">
+            <ul class="nav-links">
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="link-name">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="link-name">Perfil</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-paw"></i>
+                        <span class="link-name">Pets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="link-name">Parceiros</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="logout">
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="link-name">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="fa-solid fa-bars sidebar-toggle"></i>
+
+            <div class="profile">
+                <p>Bem vinda</p>
+                <img src="img/dash-avatar.jpg" alt="profile">
+            </div>
+        </div>
+
+        <div class="container">
+            <form method="POST" action="#">
+
+                <div class="form-content">
+
+                    <div class="input-boxes">
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" placeholder="Primeiro Nome" required>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" placeholder="Sobrenome" required>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" placeholder="Seu Email" required>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" placeholder="Informe seu telefone" required>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-calendar"></i>
+                            <input type="date" placeholder="" required>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-pen"></i>
+                            <input type="text" placeholder="Informe seu CPF" required>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <input id="cep" type="text" placeholder="Informe seu CEP" onblur="consultaCEP()" required>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-pen"></i>
+                            <input id="rua" type="text" placeholder="Endereço" disabled>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-pen"></i>
+                            <input id="nr-complemento" type="text" placeholder="Numero - Complemento" required>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-pen"></i>
+                            <input id="bairro" type="text" placeholder="Bairro" disabled>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-pen"></i>
+                            <input id="cidade" type="text" placeholder="Cidade" disabled>
+                        </div>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-pen"></i>
+                            <input id="uf" type="text" placeholder="Estado" disabled>
+                        </div>
+                    </div>
+
+                    <div class="containner-btn">
+                        <div class="btnEnviar">
+                            <input type="submit" placeholder="Enviar">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+
+    <script src="js/sidebarToggle.js"></script>
+    <script src="js/viaCepAsync.js"></script>
+</body>
+
+</html>
