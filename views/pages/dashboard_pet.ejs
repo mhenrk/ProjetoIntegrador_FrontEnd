@@ -8,7 +8,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/dashboard-perfil.css" type="text/css">
-    <link rel="stylesheet" href="css/dashboard-registro.css" type="text/css">
+    <link rel="stylesheet" href="css/dashboard-pet.css">
     <!-- FONT AWSOME -->
     <script src="https://kit.fontawesome.com/8738c5e42e.js" crossorigin="anonymous"></script>
 
@@ -43,7 +43,7 @@
                     </a>
                 </li>
 
-               <li>
+                <li>
                     <a href="dashboard_pet">
                         <i class="fa-solid fa-paw"></i>
                         <span class="link-name">Pets</span>
@@ -73,6 +73,11 @@
         <div class="top">
             <i class="fa-solid fa-bars sidebar-toggle"></i>
 
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Digite sua pesquisa">
+            </div>
+
             <div class="profile">
                 <p>Bem vinda</p>
                 <img src="img/dash-avatar.jpg" alt="profile">
@@ -80,7 +85,7 @@
         </div>
 
         <!-- ATUALIZAÇÃO DO CADASTRO -->
-        <%- include("cadastro-atualizado")%>
+        <%- include("pet_card")%>
         <!-- FIM ATUALIZAÇÃO DO CADASTRO -->
 
     </section>
