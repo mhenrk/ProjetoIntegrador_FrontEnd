@@ -47,7 +47,13 @@ app.get('/recupera-senha', (req, res) => {
 })
 
 app.get('/dashboard', (req, res) => {
-    res.render("dashPerfil", {
+    res.render("dashboard", {
+        title: "Dashboard"
+    })
+})
+
+app.get('/dashboard_perfil', (req, res) => {
+    res.render("dashboard_perfil", {
         title: "Perfil"
     })
 })
