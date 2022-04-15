@@ -5,7 +5,12 @@ const cors = require('cors')
 
 const adminRoutes = require('./routes/adminRoutes')
 const loginRoutes = require('./routes/loginRoutes')
+const registrarRoutes = require('./routes/registrarRoutes')
+
 const petRoutes = require('./routes/petRoutes')
+const senhasRoutes = require('./routes/esqueciSenhaRoutes')
+const recuperarSenhasRoutes = require('./routes/recuperarSenhaRoutes')
+
 
 require('dotenv').config()
 
@@ -23,7 +28,7 @@ app.get('/', (req, res) => {
         title: 'Petshop Anymals',
         menulist: ['Home', 'Sobre', 'Serviços', 'Contato'],
         footer: [
-            [
+            [//Contato
                 {
                     url: "mailto:email@gmail.com",
                     icone: "img/footer-email.png"
@@ -33,14 +38,14 @@ app.get('/', (req, res) => {
                     icone: "img/footer-email.png"
                 }
             ],
-            [
+            [//Serviços
                 "Caminhada",
                 "Vacinação",
                 "Petshop",
                 "Banho",
                 "Tosa",
             ],
-            [
+            [//Redes Sociais
                 {
                     url: "https://instagram.com",
                     icone: "img/footer-email.png"
@@ -62,7 +67,7 @@ app.get('/', (req, res) => {
     })
 })
 
-//app.use("/registrar", registrarRoutes)
+app.use("/registrar", registrarRoutes)
 app.use('/login', loginRoutes)
 
 //validação/redirecionamento para o controlador de acordo com a flag is_admin do banco
@@ -70,6 +75,8 @@ app.use('/login', loginRoutes)
 app.use('/dashboard', adminRoutes)
 app.use('/dashboard/pet', petRoutes)
 
-//app.use("/esqueci-senha", recoverRoutes)
+app.use("/esqueci-senha", senhasRoutes)
+app.use("/recuperar-senha", recuperarSenhasRoutes)
+
 
 app.listen(process.env.PORT, () => console.log(`Server FrontEnd: http://localhost:${process.env.PORT}`))

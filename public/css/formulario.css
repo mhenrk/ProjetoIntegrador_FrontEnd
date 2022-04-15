@@ -1,0 +1,123 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+:root{
+    --form-border: rgba(72, 71, 71, 0.25);
+    --textoLabel: #000000;
+    --textoInput: #000000;
+    --borderInput: rgba(128, 128, 128, 0.25);
+    --borderInputFocus: rgb(255, 204, 21);
+    --btnColor: #ffffff;
+    --btnBg: rgb(170, 18, 181);
+    --btnBgHover: rgb(144, 15, 153);
+    --socialMedia: #523697;
+}
+
+/* 
+body {
+    width: 100vw;
+    height: 100vh;
+    border: 5px solid blue;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+} */
+
+.contato-container{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.contato-container .contato-header{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.contato-container .contato-header h2{
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.contato-container .contato-header .contato-social i{
+    font-size: 36px;
+    padding: 10px;
+    color: var(--socialMedia);
+}
+form {
+    margin: 15px auto;
+    width: 450px;
+    border: 1px solid var(--form-border);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px 0;
+    text-transform: uppercase;
+    color: var(--textoLabel);
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    font-size: 14px;
+    padding: 0 10px;
+    border: none;
+    border-bottom: 2px solid var(--borderInput);
+    color: var(--textoInput);
+}
+
+input:active,
+input:focus{
+    border-bottom: 2px solid var(--borderInputFocus);
+}
+
+textarea{
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 2px solid var(--borderInput);
+}
+
+textarea:active,
+textarea:focus{
+    border: 2px solid var(--borderInputFocus);
+}
+
+button {
+    width: 250px;
+    border: none;
+    background: var(--btnBg);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background: var(--btnBgHover);
+}

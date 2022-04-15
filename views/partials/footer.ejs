@@ -12,8 +12,8 @@
                 <p>Rua das Pedrinhas, nº 664</p>
             </address>
             <div class="contatos">
-                <% footer[0].forEach(contato => { %>
-                    <a href="<%= contato.url %>"><img class="contato__icones" src="<%= contato.icone %>" alt="email"></a>
+                <% footer[0].forEach(item => { %>
+                    <a href="<%= item.url %>"><img class="contato__icones" src="<%= item.icone %>" alt="email"></a>
                 <% })%>
             </div>
         </div>

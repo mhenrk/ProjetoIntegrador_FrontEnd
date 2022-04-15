@@ -1,0 +1,58 @@
+.hero{
+    
+    width: 100vw;
+}
+
+.hero-container{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-titulo{
+    padding: 20px;
+    width: 50%;
+}
+
+.hero-titulo h2{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.hero-titulo span{
+    display: block;
+    border: 1px solid transparent;
+    background: tomato;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    margin-top: 15px;
+    border-radius: 100px;    
+    cursor: pointer;
+}
+
+.hero-titulo .saibamais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saibamais a{
+    text-decoration: none;
+    color: white;
+}
+
+.hero-titulo span p{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.hero-image img{
+    width: 100%;
+    max-width: 450px;
+    margin: 15px 0;
+
+}
