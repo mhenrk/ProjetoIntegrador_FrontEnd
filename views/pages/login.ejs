@@ -16,7 +16,7 @@
 <body>
     
     <div class="container">
-        <form action="login" method="POST">
+        <form action="/login/auth" method="POST">
 
             <div class="form-content">
 
@@ -25,11 +25,11 @@
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fa-solid fa-envelope"></i>
-                            <input type="text" placeholder="Digite seu email" required>
+                            <input type="email" name="email" placeholder="Digite seu email" required>
                         </div>
                         <div class="input-box">
                             <i class="fa-solid fa-key"></i>
-                            <input type="password" placeholder="Digite sua senha" required>
+                            <input type="password" name="password" placeholder="Digite sua senha" required>
                         </div>
                         <div class="text"><a href="esqueci-senha">Esqueceu sua senha?</a></div>
                         <div class="button input-box">

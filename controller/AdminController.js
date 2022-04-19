@@ -1,19 +1,19 @@
 module.exports = {
 
     async index(req, res){
-        res.status(200).json({message: "SOU ADMIN"})
+        res.status(200).json({message: "Rota: DASHBOARD"})
     },
     async admin(req, res){
-        res.status(200).json({message: "VALIDADO"})
+        res.status(200).json({message: "Rota Admin: DASHBOARD"})
     },
     async pet(req, res){
-        res.status(200).json({message: "TODOS PETS"})
+        res.status(200).json({message: "Rota Admin: DASHBOARD"})
     },
     async usuarios(req, res){
-        res.status(200).json({message: "TODOS USUARIOS"})
+        res.status(200).json({message: "Rota Admin: DASHBOARD"})
     },
     async parceiros(req, res){
-        res.status(200).json({message: "TODOS PARCEIROS"})
+        res.status(200).json({message: "Rota Admin: DASHBOARD"})
     }
 
 
