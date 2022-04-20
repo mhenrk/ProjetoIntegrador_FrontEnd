@@ -19,22 +19,28 @@ module.exports = {
             .then(response => {
 
                 const { is_admin } = response.data
-                const data = JSON.stringify(response.data)
-            
 
                 if (response.status === 200 && is_admin) {
-                    localStorage.setItem('usuario', data)
+                    res.cookie('admin', "true", {
+                        httpOnly: true
+                    })
+
+                    res.status(200).send(req.cookie)
+
                     res.redirect("/dashboard/admin")
+                    
                 } else if (response.status === 200 && !is_admin) {
-                    localStorage.setItem('usuario', data)
+                    res.cookie('user', "true", {
+                        httpOnly: true
+                    })
                     res.redirect("/dashboard")
                 }
             }).catch(erro => console.log(erro.message))
     },
 
     logout(req, res) {
-        sessionStorage.removeItem('perfil')
-        res.status(200).redirect("/")
+        console.log(req.signedCookies)
+        res.redirect("/")
     }
 
 }

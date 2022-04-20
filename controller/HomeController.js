@@ -11,7 +11,7 @@ module.exports = {
                     },
                     {
                         url: "http://wa.me/+55",
-                        icone: "img/footer-email.png"
+                        icone: "img/footer-whatsapp.png"
                     }
                 ],
                 [
@@ -24,19 +24,19 @@ module.exports = {
                 [
                     {
                         url: "https://instagram.com",
-                        icone: "img/footer-email.png"
+                        icone: "img/footer-instagram.png"
                     },
                     {
                         url: "https://facebook.com",
-                        icone: "img/footer-email.png"
+                        icone: "img/footer-facebook.png"
                     },
                     {
                         url: "https://youtube.com",
-                        icone: "img/footer-email.png"
+                        icone: "img/footer-youtube.png"
                     },
                     {
                         url: "https://twitter.com",
-                        icone: "img/footer-email.png"
+                        icone: "img/footer-twitter.png"
                     }, 
                 ]
             ]
