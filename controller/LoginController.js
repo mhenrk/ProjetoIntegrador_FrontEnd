@@ -25,8 +25,6 @@ module.exports = {
                         httpOnly: true
                     })
 
-                    res.status(200).send(req.cookie)
-
                     res.redirect("/dashboard/admin")
                     
                 } else if (response.status === 200 && !is_admin) {

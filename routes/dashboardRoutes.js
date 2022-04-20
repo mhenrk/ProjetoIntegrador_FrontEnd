@@ -10,10 +10,22 @@ routes.get('/', (req, res) => {
     })
 })
 
+routes.get('/admin', (req, res) => {
+    res.status(200).render('dashboard' , {
+        title: 'Dashboard Admin | DH Anymals'
+    })
+})
+
 /** /dashboard/perfil */
 routes.get('/perfil', (req, res) => {
     res.status(200).render('dashboard_perfil' , {
-        title: 'Dashboard | Perfil'
+        title: 'Dashboard Admin | Perfil'
+    })
+})
+
+routes.get('/admin/perfil', (req, res) => {
+    res.status(200).render('dashboard_perfil' , {
+        title: 'Dashboard Admin | Perfil'
     })
 })
 
@@ -24,10 +36,22 @@ routes.get('/pet', (req, res) => {
     })
 })
 
+routes.get('/admin/pet', (req, res) => {
+    res.status(200).render('dashboard_pet' , {
+        title: 'Dashboard Admin | Pet'
+    })
+})
+
 /** /dashboard/parceiro */
 routes.get('/parceiro', (req, res) => {
     res.status(200).render('dashboard_parceiro' , {
         title: 'Dashboard | Parceiros'
+    })
+})
+
+routes.get('/admin/parceiro', (req, res) => {
+    res.status(200).render('dashboard_parceiro' , {
+        title: 'Dashboard Admin | Parceiros'
     })
 })
 

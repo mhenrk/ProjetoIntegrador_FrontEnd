@@ -2,9 +2,11 @@ const express = require('express')
 const app = express()
 const path = require('path');
 const cors = require('cors')
-const cookieParser = require('cookie-parser')
+const session = require('express-session')
 
-const adminRoutes = require('./routes/adminRoutes')
+//token session storage
+//
+
 const loginRoutes = require('./routes/loginRoutes')
 const registrarRoutes = require('./routes/registrarRoutes')
 const senhasRoutes = require('./routes/esqueciSenhaRoutes')
@@ -13,8 +15,6 @@ const homeRoutes = require('./routes/homeRoutes')
 const dashboardRoutes = require('./routes/dashboardRoutes')
 
 require('dotenv').config()
-
-app.use(cookieParser())
 
 app.use(cors({
     origin: `${process.env.BACKEND_URL}`
