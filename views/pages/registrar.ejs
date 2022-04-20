@@ -18,7 +18,7 @@
 <body>
 
     <div class="container">
-        <form method="post" action="#">
+        <form action="registrar" method="POST">
 
             <div class="form-content">
 
@@ -26,85 +26,26 @@
                     <div class="title">Registre-se</div>
                     <div class="input-boxes">
 
-                        <div class="left-data">
-                            <div class="input-box">
-                                <i class="fa-solid fa-user"></i>
-                                <input type="text" placeholder="Primeiro Nome" required>
-                            </div>
-                            <div class="input-box">
-                                <i class="fa-solid fa-envelope"></i>
-                                <input type="email" placeholder="Seu Email" required>
-                            </div>
 
-                            <div class="input-box">
-                                <i class="fa-solid fa-calendar"></i>
-                                <input type="date" placeholder="" required>
-                            </div>
-
-                            <div class="input-box">
-                                <i class="fa-solid fa-key"></i>
-                                <input type="password" placeholder="Cadastre uma senha" required>
-                            </div>
-
-                            <!-- INFORMAÇÕES DE ENDEREÇO -->
-                            <div class="input-box">
-                                <i class="fa-solid fa-pen"></i>
-                                <input id="rua" type="text" placeholder="Endereço" disabled>
-                            </div>
-
-                            <div class="input-box">
-                                <i class="fa-solid fa-pen"></i>
-                                <input id="bairro" type="text" placeholder="Bairro" disabled>
-                            </div>
-
-                            <div class="input-box">
-                                <i class="fa-solid fa-pen"></i>
-                                <input id="uf" type="text" placeholder="Estado" disabled>
-                            </div>
-
+                        <div class="input-box">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="nome" placeholder="Primeiro Nome" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Seu Email" required>
                         </div>
 
-                        <div class="right-data">
-                            <div class="input-box">
-                                <i class="fa-solid fa-user"></i>
-                                <input type="text" placeholder="Sobrenome" required>
-                            </div>
-
-                            <div class="input-box">
-                                <i class="fa-solid fa-pen"></i>
-                                <input type="text" placeholder="Informe seu CPF" required>
-                            </div>
-
-                            <div class="input-box">
-                                <i class="fa-solid fa-phone"></i>
-                                <input type="tel" placeholder="Informe seu telefone" required>
-                            </div>
-
-                            <!-- INFORMAÇÕES DE ENDEREÇO -->
-                            <div class="input-box">
-                                <i class="fa-solid fa-location-crosshairs"></i>
-                                <input id="cep" type="text" placeholder="Informe seu CEP" onblur="consultaCEP()" required>
-                            </div>
-
-                            <div class="input-box">
-                                <i class="fa-solid fa-pen"></i>
-                                <input id="nr-complemento" type="text" placeholder="Numero - Complemento" required>
-                            </div>
-
-                            <div class="input-box">
-                                <i class="fa-solid fa-pen"></i>
-                                <input id="cidade" type="text" placeholder="Cidade" disabled>
-                            </div>
-                            
-
+                        <div class="input-box">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" name="password" placeholder="Cadastre uma senha" required>
                         </div>
-
-                        <div class="text"><input type="checkbox"><a href="#">Aceito os termos</a></div>
+                        
                         <div class="button input-box">
                             <input type="submit" placeholder="Enviar">
                         </div>
                     </div>
-                    <div class="text">Já é cadastrado?<label for=""><a href="login"> Entre </a></label></div>
+                    <div class="cadastrado">Já é cadastrado?<label for=""><a href="login"><span>Entre</span></a></label></div>
                 </div>
             </div>
         </form>

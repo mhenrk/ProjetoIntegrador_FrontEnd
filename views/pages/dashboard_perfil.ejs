@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/dashboard.css" type="text/css">
+    <link rel="stylesheet" href="/css/dashboard-registro.css" type="text/css">
+    <!-- FONT AWSOME -->
+    <script src="https://kit.fontawesome.com/8738c5e42e.js" crossorigin="anonymous"></script>
+
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="/img/dash-logo.png" alt="logo">
+            </div>
+
+            <span class="logo_name">Anymals</span>
+        </div>
+
+        <div class="menu-itens">
+            <ul class="nav-links">
+                <li>
+                    <a href="/dashboard">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="link-name">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/dashboard/perfil">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="link-name">Perfil</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/dashboard/pet">
+                        <i class="fa-solid fa-paw"></i>
+                        <span class="link-name">Pets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/dashboard/parceiro">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="link-name">Parceiros</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="logout">
+                <li>
+                    <a href="/dashboard/logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="link-name">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="fa-solid fa-bars sidebar-toggle"></i>
+
+            <div class="profile">
+                <p>Bem vinda</p>
+                <img src="/img/dash-avatar.jpg" alt="profile">
+            </div>
+        </div>
+
+        <!-- ATUALIZAÇÃO DO CADASTRO -->
+        <%- include("cadastro-atualizado")%>
+            <!-- FIM ATUALIZAÇÃO DO CADASTRO -->
+
+    </section>
+
+    <script src="/js/sidebarToggle.js"></script>
+    <script src="/js/registro-viaCepAsync.js"></script>
+</body>
+
+</html>

@@ -1,19 +1,19 @@
 const url = 'http://localhost:3333/petshop'
 
 function getUsuarios(){
-    axios.get(`${url}/cadastra-user`)
-    .then(resposta => console.log(resposta))
+    axios.get(`${url}/usuario`)
+    .then(resposta => console.log(resposta.data))
     .catch(erro => console.log(erro))
 }
 
 function getOneUsuario(id){
-    axios.get(`${url}/cadastra-user/${id}`)
+    axios.get(`${url}/usuario/${id}`)
     .then(resposta => console.log(resposta))
     .catch(erro => console.log(erro))
 }
 
 function createUser(){
-    axios.post(`${url}/cadastra-user/`, {
+    axios.post(`${url}/usuario/`, {
 
     })
     .then(resposta => console.log(resposta))
@@ -21,7 +21,7 @@ function createUser(){
 }
 
 function updateUser(id){
-    axios.update(`${url}/cadastra-user/${id}`, {
+    axios.update(`${url}/usuario/${id}`, {
         
     })
     .then(resposta => console.log(resposta))
@@ -29,7 +29,7 @@ function updateUser(id){
 }
 
 function deleteUser(id){
-    axios.update(`${url}/cadastra-user/${id}`)
+    axios.update(`${url}/usuario/${id}`)
     .then(resposta => console.log("Usuario Deletado"))
     .catch(erro => console.log(erro))
 }

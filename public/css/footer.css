@@ -14,28 +14,27 @@ body{
 }
 
 footer{
+    margin: 0 auto;
     width: 100vw;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    
+    flex-direction: column;  
 }
 
-.container{
+.container-footer{
     display: flex;
-    width: 100%;
+    width: 80%;
     flex-wrap: wrap;
     background-color: white;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
-.container h2{
+.container-footer h2{
     font-size: 16px;
     margin: 5px 5px;
 }
 
-.container p{
+.container-footer p{
     margin: 5px 0px;
     padding: 5px 5px;
     text-align: justify;
@@ -44,6 +43,7 @@ footer{
 .card{
     display: flex;
     flex-direction: column;
+    max-width: 200px;
     width: 15%;
     font-size: 12px;
     margin: 20px 15px;

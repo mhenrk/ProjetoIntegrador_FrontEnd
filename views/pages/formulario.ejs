@@ -1,0 +1,33 @@
+<div class="contato-container">
+    <div class="contato-header">
+        <h2>
+            Ficou com dúvida?<br>Entre em contato conosco
+        </h2>
+        <div class="contato-social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </div>
+    
+    <form action="/login" method="POST">
+        <div class="input-box">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome">
+            <p id="nome-erro" class="erro-msg"></p>
+        </div>
+    
+        <div class="input-box">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required placeholder="Digite seu email" >
+            <p id="email-erro" class="erro-msg"></p>
+        </div>
+    
+        <div class="input-box">
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" cols="30" rows="10" id="mensagem" placeholder="Digite sua mensagem"></textarea>
+            <p id="msg-erro" class="erro-msg"></p>
+        </div>
+        <button id='btn-envio' type="submit">Enviar</button>
+    </form>
+</div>
