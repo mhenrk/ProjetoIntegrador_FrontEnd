@@ -57,6 +57,7 @@ routes.get('/admin/parceiro', (req, res) => {
 
 /** /dashboard/logout */
 routes.get('/logout', (req, res) => {
+    res.session = ""
     res.status(200).redirect('/')
 })
 

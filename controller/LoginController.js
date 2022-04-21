@@ -37,7 +37,6 @@ module.exports = {
     },
 
     logout(req, res) {
-        console.log(req.signedCookies)
         res.redirect("/")
     }
 

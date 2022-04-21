@@ -4,9 +4,6 @@ const path = require('path');
 const cors = require('cors')
 const session = require('express-session')
 
-//token session storage
-//
-
 const loginRoutes = require('./routes/loginRoutes')
 const registrarRoutes = require('./routes/registrarRoutes')
 const senhasRoutes = require('./routes/esqueciSenhaRoutes')
@@ -15,6 +12,12 @@ const homeRoutes = require('./routes/homeRoutes')
 const dashboardRoutes = require('./routes/dashboardRoutes')
 
 require('dotenv').config()
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true
+}));
 
 app.use(cors({
     origin: `${process.env.BACKEND_URL}`
@@ -27,15 +30,11 @@ app.use(express.static("public"));
 
 app.get('/', homeRoutes)
 
-app.use("/registrar", registrarRoutes)
 app.use("/login", loginRoutes)
-
-//validação/redirecionamento para o controlador de acordo com a flag is_admin do banco
-//usuario logado pode ser ou não admin
-app.use('/dashboard', dashboardRoutes)
-
 app.use("/esqueci-senha", senhasRoutes)
 app.use("/recuperar-senha", recuperarSenhasRoutes)
 
+app.use("/registrar", registrarRoutes)
+app.use('/dashboard', dashboardRoutes)
 
 app.listen(process.env.PORT, () => console.log(`Server FrontEnd: http://localhost:${process.env.PORT}`))

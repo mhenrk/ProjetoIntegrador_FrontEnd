@@ -20,6 +20,12 @@ body {
     padding: 30px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -131,4 +137,30 @@ form .form-content .input-boxes .button input:hover{
 form .form-content label{
     color: #5b13b9;
     cursor: pointer;
+}
+
+form .form-content .cadastrado {   
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-top: 15px;
+}
+
+form .form-content .cadastrado{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cadastrado span{
+    padding: 0 10px;
+}
+
+.cadastrado a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #5b13b9;
 }
