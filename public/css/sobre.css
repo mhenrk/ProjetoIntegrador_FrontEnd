@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root{
+    --montserrat: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat" , sans-serif;
+}
+
+.container-sobre{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+.container-sobre h2{
+    font-size: 36px;
+    padding: 10px;
+    margin: 10px 0;
+    margin-left: 10px;
+    border-left: 8px solid blue;
+}
+
+.container-sobre .card-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-sobre .sobre-card{
+    border: 1px solid gray;
+    border-bottom: 5px solid blue;
+    max-width: 350px;
+    height: 350px;
+    width: calc(100% / 3 - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    margin: 15px 10px;
+}
+
+.sobre-card span{
+    background: red;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.sobre-card i{
+    font-size: 36px;
+    color: white;
+}
+
+.sobre-card p{
+    text-align: justify;
+    padding: 15px;
+    font-size: 16px;
+}
