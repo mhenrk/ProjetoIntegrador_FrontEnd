@@ -1,0 +1,32 @@
+<section class="parceiro" id="parceiro">
+
+    <% listaparceiro.forEach( parceiro => { %>
+        <div class="parceiro_container">
+            <div class="parceiro-nome">
+                <h2><%=parceiro.nome_fantasia%></h2>
+                <div class="parceiro-dados">
+                    <p>CNPJ: <%=parceiro.cnpj%></p>
+                    <p>Telefone: <%=parceiro.telefone%></p>
+                    <p><%=parceiro.cidade%> - <%=parceiro.estado%></p>
+                </div>
+            </div>
+
+            <div class="servicos">
+                <% parceiro.servico.forEach( servico => { %>
+                    <p><%=servico.nome%></p>
+                <% }) %>
+            </div>
+
+            <div class="contato">
+                <p>Contato:</p>
+                <div class="socialicones">
+                    <a href="mailto:mail@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/+55"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com.br"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="http://facebook.com.br"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+   
+</section>
