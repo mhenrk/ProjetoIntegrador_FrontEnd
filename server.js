@@ -14,9 +14,9 @@ const dashboardRoutes = require('./routes/dashboardRoutes')
 require('dotenv').config()
 
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: 'petshop',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: false
 }));
 
 app.use(cors({

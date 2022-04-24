@@ -1,26 +1,47 @@
-<section class="pet_container">
-    <div class="card">
-        <div class="card_img">
-            <img src="/img/dash-pet-test.jpg" alt="profile">
-        </div>
-        <h3 class="card_name">
-            <span>Pipoka</span>
-            <p>Nasc: 12/07/2019</p>
-        </h3>
-        <div class="card_info">
-            <p class="card_raca">
-                <span>Raca: </span>Splitz
-            </p>
-            <p class="card_tipo">
-                <span>Tipo: </span>Cachorro
-            </p>
-            <p class="card_peso">
-                <span>Peso: </span>1.250kg
-            </p>
-        </div>
-        <div class="cardBtn">
-            <span class="delBtn"><i class="fa-solid fa-xmark"></i></span>
-            <span class="editBtn"><i class="fa-solid fa-pen"></i></span>
+<section class="pet">
+
+    <div class="menu-pet">
+        <div class="btnAdicionar">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <p>Adicionar</p>
         </div>
     </div>
+
+    <% listapet.forEach( pet=> { %>
+        <div class="pet_container">
+            <div class="card-header">
+                <div class="pet-image">
+                    <span><i class="fa-solid fa-paw"></i></span>
+                </div>
+                <div class="pet-info">
+                    <h2><%= pet.nome_pet %></h2>
+                    <p><%=pet.raca.nome%></p>
+                </div>
+                <div class="pet-tipo">
+                    <p><%=pet.tipo.nome%></p>
+                </div>
+                <div class="controles">
+                    <span class="botao editar"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <span class="botao excluir"><i class="fa-solid fa-trash-can"></i></span>
+                </div>
+            </div>
+            <div class="pet-detalhes">
+                <div class="detalhe-container">
+                    <img class="img-detalhe" src="/img/pet-peso.png" alt="peso" >
+                    <h3 class="titulo-detalhe">Peso</h3>
+                    <p class="subtitulo-detalhe"><%=pet.peso.nome%></p>
+                </div>
+                <div class="detalhe-container">
+                    <img class="img-detalhe" src="/img/pet-aniversario.png" alt="aniversario" >
+                    <h3 class="titulo-detalhe">Aniversario</h3>
+                    <p class="subtitulo-detalhe"><%=pet.datanasc_pet%></p>
+                </div>
+                <div class="detalhe-container">
+                    <img class="img-detalhe" src="/img/pet-genero.png" alt="genero" >
+                    <h3 class="titulo-detalhe">Genero</h3>
+                    <p class="subtitulo-detalhe"><%=pet.genero.nome%></p>
+                </div>
+            </div>
+        </div>
+    <% }) %>
 </section>

@@ -30,11 +30,12 @@ routes.get('/admin/perfil', (req, res) => {
 })
 
 /** /dashboard/pet */
-routes.get('/pet', (req, res) => {
-    res.status(200).render('dashboard_pet' , {
-        title: 'Dashboard | Pet'
-    })
-})
+routes.get('/pet', dashboardController.showUserPets)
+// routes.get('/pet', (req, res) => {
+//     res.status(200).render('dashboard_pet' , {
+//         title: 'Dashboard | Pet'
+//     })
+// })
 
 routes.get('/admin/pet', (req, res) => {
     res.status(200).render('dashboard_pet' , {
@@ -43,11 +44,12 @@ routes.get('/admin/pet', (req, res) => {
 })
 
 /** /dashboard/parceiro */
-routes.get('/parceiro', (req, res) => {
-    res.status(200).render('dashboard_parceiro' , {
-        title: 'Dashboard | Parceiros'
-    })
-})
+routes.get('/parceiro', dashboardController.showParceiros)
+// routes.get('/parceiro', (req, res) => {
+//     res.status(200).render('dashboard_parceiro' , {
+//         title: 'Dashboard | Parceiros'
+//     })
+// })
 
 routes.get('/admin/parceiro', (req, res) => {
     res.status(200).render('dashboard_parceiro' , {
