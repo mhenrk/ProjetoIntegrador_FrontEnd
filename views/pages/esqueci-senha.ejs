@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <script src="https://kit.fontawesome.com/8738c5e42e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/esqueci-senha.css" type="text/css">
+    <link rel="stylesheet" href="/css/esqueci-senha.css" type="text/css">
     
     <title>
-        <%= title %>
+        Esqueci minha Senha
     </title>
 
 </head>
@@ -27,7 +27,9 @@
                             <i class="fa-solid fa-envelope"></i>
                             <input type="email" name="email" placeholder="Digite seu email" required>
                         </div>
-
+                        <% if( erro ) { %>
+                            <p><%=erro%></p>
+                        <% } %>
                         <div class="button input-box">
                             <input type="submit" placeholder="Enviar">
                         </div>
