@@ -15,11 +15,7 @@ module.exports = {
             password: req.body.password,
         }
 
-        // const config = {
-        //     headers: {
-        //         "Authorization": `Bearer ${token}`,
-        //     }
-        // }
+        
 
         axios.post(`${process.env.BACKEND_URL}/token`, userLogin)
             .then(response => {
@@ -33,7 +29,6 @@ module.exports = {
                     req.session.userName = nome
                     req.session.userToken = token
                     req.session.autenticated = true
-
                     res.redirect('/dashboard/admin')
 
                 } else if (res.statusCode === 200 && !is_admin) {
@@ -43,9 +38,9 @@ module.exports = {
                     req.session.userName = nome
                     req.session.userToken = token
 
+                    console.log(req.session.userID ,  req.session.userEmail , req.session.userName , req.session.userToken)
 
                     return res.render('dashboard', {
-                        redirect: '/dashboard',
                         session: req.session
                     })
 

@@ -10,6 +10,7 @@ const senhasRoutes = require('./routes/esqueciSenhaRoutes')
 const recuperarSenhasRoutes = require('./routes/recuperarSenhaRoutes')
 const homeRoutes = require('./routes/homeRoutes')
 const dashboardRoutes = require('./routes/dashboardRoutes')
+const petRoutes = require('./routes/petRoutes')
 
 require('dotenv').config()
 

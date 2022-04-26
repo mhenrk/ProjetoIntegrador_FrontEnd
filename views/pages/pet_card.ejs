@@ -3,11 +3,11 @@
     <div class="menu-pet">
         <div class="btnAdicionar">
             <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <p>Adicionar</p>
+            <a href="/dashboard/pet/add"><p>Adicionar</p></a>
         </div>
     </div>
 
-    <% pets.forEach( pet => { %>
+    <% listapet.forEach( pet => { %>
         <div class="pet_container">
             <div class="card-header">
                 <div class="pet-image">
@@ -15,14 +15,14 @@
                 </div>
                 <div class="pet-info">
                     <h2><%= pet.nome_pet %></h2>
-                    <p><%=pet.raca.nome%></p>
+                    <p><%= pet.raca.nome %></p>
                 </div>
                 <div class="pet-tipo">
                     <p><%=pet.tipo.nome%></p>
                 </div>
                 <div class="controles">
-                    <span class="botao editar"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                    <span class="botao excluir"><i class="fa-solid fa-trash-can"></i></span>
+                    <a href="/dashboard/pet/update/<%=pet.id%>"><span class="botao editar"><i class="fa-solid fa-wand-magic-sparkles"></i></span></a>
+                    <a href="/dashboard/pet/delete/<%=pet.id%>"><span class="botao excluir"><i class="fa-solid fa-trash-can"></i></span></a>
                 </div>
             </div>
             <div class="pet-detalhes">

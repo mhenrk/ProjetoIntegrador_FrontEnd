@@ -3,22 +3,22 @@ const axios = require("axios")
 module.exports = {
 
     async index(req, res) {
+        // console.log(req.session)
         res.status(200).render("dashboard", {
-            session: req.session
+            session: req.session,
             //por que tá vindo undefined?
         })
     },
 
     async showUserPets(req, res) {
+        // console.log(req.session)
 
-        const { userID } = req.session
-
+        const userID = req.session.userID
+        
         await axios.get(`${process.env.BACKEND_URL}/usuario/${userID}`)
             .then(response => {
-                if (response.data.pet === null) return
-
                 res.status(200).render('dashboard_pet', {
-                    pets: response.data.pet,
+                    listapet: response.data.pet,
                     session: req.session
                 })
             })
@@ -32,7 +32,15 @@ module.exports = {
 
     async showParceiros(req, res) {
 
-        await axios.get(`${process.env.BACKEND_URL}/parceiros/`)
+        const userToken = req.session.userToken
+
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${userToken}`,
+            }
+        }
+        
+        await axios.get(`${process.env.BACKEND_URL}/parceiros/`, config)
             .then(response => {
 
                 res.status(200).render('dashboard_parceiro', {
@@ -50,9 +58,62 @@ module.exports = {
     },
 
     async profile(req, res) {
-        res.render('dashboard_perfil', {
-            redirect: '/perfil',
-            session: req.session
+        // console.log(req.session)
+        const userID = req.session.userID
+
+        axios.get(`${process.env.BACKEND_URL}/usuario/${userID}`)
+            .then(response => {
+
+                res.render('dashboard_perfil', {
+                    user: response.data,                    
+                    session: req.session
+                })
+            })
+            .catch(e => {
+                res.render('dashboard_perfil', {
+                    erro: `Ocorreu um erro: ${e}`
+                })
+            })
+    },
+
+    async profileUpdate(req, res) {
+
+        const userToken = req.session.userToken
+
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${userToken}`,
+            }
+        }
+        
+        const userBody = req.body
+        console.log(userBody)
+
+        axios.put(`${process.env.BACKEND_URL}/usuario/upd`, userBody, config)
+        .then(response => {
+            console.log(response)
+            res.render('dashboard_perfil', {
+                user: response.data,
+                session: req.session
+            })
         })
+        .catch(e => {
+            console.log(e.message)
+            res.render('dashboard', {
+                //inserir if para ver o user quando é / não usado
+                session: req.session,
+                erro: `Ocorreu um erro: ${e}`
+            })
+        })
+    },
+
+
+    logout(req, res) {
+        req.session = ""
+        res.status(200).redirect('/')
+    },
+
+    close (req, res) {
+        res.status(200).redirect('/dashboard')
     }
 }

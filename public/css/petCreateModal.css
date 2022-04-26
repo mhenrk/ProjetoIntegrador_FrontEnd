@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    max-width: 500px;
+    max-width: 800px;
     margin: 5% auto;
     border-radius: 10px;
     position: relative;
@@ -33,12 +33,19 @@
 .modal-formulario form {
     width: 100%;
     margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 form .input-box {
     display: flex;
     flex-direction: column;
     padding: 10px 0;
+    width: calc(100% / 3 - 15px);
+    margin: 10px 0;
+    padding: 0 5px;
 }
 
 .input-box label {
@@ -80,6 +87,9 @@ form .input-box {
 form .btn {
     align-items: center;
     justify-content: center;
+    width: 100%;
+    align-items: flex-end;
+
 }
 
 form .btn span{

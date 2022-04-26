@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/petCreateModal.css">
+
+    <title>Editar pet</title>
+</head>
+
+<body>
+    <div class="modal">
+        <div class="modal-formulario">
+            <form action="/dashboard/pet/update/<%=pet.id%>" method="post">
+                <div class="input-box">
+                    <label for="nome_pet">Nome</label>
+                    <input type="text" name="nome_pet" value="<%=pet.nome%>" id="nome_pet" placeholder="Nome do pet">
+                </div>
+
+                <div class="input-box">
+                    <label for="apelido_pet">Apelido</label>
+                    <input type="text" name="apelido_pet" id="apelido_pet" placeholder="Apelido do pet">
+                </div>
+
+                <div class="input-box">
+                    <label for="raca_pet_id">Raca</label>
+                    <select name="raca_pet_id" id="raca_pet_id">
+                        <option value="" disabled selected hidden>Escolha uma opção</option>
+                        <% raca.forEach(item => {%>
+                            <option value="<%=item.id%>"><%=item.nome%></option>
+                        <%})%>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label for="tipo_pet_id">Tipo</label>
+                    <select name="tipo_pet_id" id="tipo_pet_id">
+                        <option value="" disabled selected hidden>Escolha uma opção</option>
+                        <% tipo.forEach(item => {%>
+                            <option value="<%=item.id%>"><%=item.nome%></option>
+                        <%})%>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label for="datanasc_pet">Data Nascimento</label>
+                    <input type="date" name="datanasc_pet" id="datanasc_pet">
+                </div>
+
+                <div class="input-box">
+                    <label for="idade">Idade do Pet</label>
+                    <input type="number" name="idade_pet" placeholder="de 1 a 3 Anos" id="idade" min="1" max="3">
+                </div>
+
+                <div class="input-box">
+                    <label for="genero_pet_id">Genero</label>
+                    <select name="genero_pet_id" id="genero_pet_id">
+                        <option value="" disabled selected hidden>Escolha uma opção</option>
+                        <% genero.forEach(item => {%>
+                            <option value="<%=item.id%>"><%=item.nome%></option>
+                        <%})%>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label for="pet_castrado_id">Castração</label>
+                    <select name="pet_castrado_id" id="pet_castrado_id">
+                        <option value="" disabled selected hidden>Escolha uma opção</option>
+                        <% castracao.forEach(item => {%>
+                            <option value="<%=item.id%>"><%=item.situacao%></option>
+                        <%})%>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label for="peso_pet_id">Peso</label>
+                    <select name="peso_pet_id" id="peso_pet_id">
+                        <option value="" disabled selected hidden>Escolha uma opção</option>
+                        <% peso.forEach(item => {%>
+                            <option value="<%=item.id%>"><%=item.nome%></option>
+                        <%})%>
+                    </select>
+                </div>
+
+                <div class="input-box btn">
+                    <button type="submit">Atualizar</button>
+                    <a href="/dashboard/close"><span>X</span></a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
