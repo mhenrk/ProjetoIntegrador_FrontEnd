@@ -11,6 +11,8 @@ module.exports = {
 
     async store(req, res) {
 
+        console.log(req.body)
+
         try {
             await axios.post(`${process.env.BACKEND_URL}/usuario/add`, {
                 nome: req.body.nome,

@@ -16,7 +16,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #c3c3c3;
+    background: white;
     padding: 30px;
 }
 
@@ -28,6 +28,7 @@ body {
     width: 100%;
     background-color: white;
     padding: 40px 30px;
+    border: 1px solid rgba(128, 128, 128, 0.35);
     border-radius: 10px;
 }
 
@@ -56,6 +57,15 @@ form .form-content .input-boxes{
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+}
+.input-boxes p {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: var(--montserrat);
+    font-size: 12px;
+    color: red;
+    font-weight: 700;
 }
 
 form .form-content .input-box{

@@ -2,13 +2,22 @@
 
 :root{
     --montserrat: 'Montserrat', sans-serif;
+    --brancoBg: #ffffff;
+    --navlinkBar: #5b13b9;
+
+    --btnBg: #7d2ae8;
+    --btnBgHover: #7d2ae8;
+    --btnColor: #ffffff;
+
+    --sectionIconColor: #5b13b9;
+    --sectionTextColor: #5b13b9;
+    --sectionSubColor: #000000;
 }
 
 body{
     margin: 0;
     padding: 0;
-    font-family: "Open Sans", sans-serif;
-    background-color: white;
+    background-color: var(--brancoBg);
     box-sizing: border-box;
     font-family: var(--montserrat);
 }
@@ -48,12 +57,12 @@ body{
 
 .conteudo__menu a{
     text-decoration: none;
-    color: black;
+    color: var(--sectionSubColor);
 }
 
 .conteudo__menu a:hover{
     padding-bottom: 5px;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom: 5px solid var(--navlinkBar);
 }
 .menuTxt{
     text-transform: uppercase;
@@ -75,7 +84,7 @@ body{
     justify-content: center;
     width: 150px;
     height: 40px;
-    background: rgb(209, 28, 249);
+    background: var(--btnBg);
     border: 1px transparent;
     border-radius: 30px;
     cursor: pointer;
@@ -83,7 +92,7 @@ body{
 }
 
 .btnEntrar:hover{
-    background-color: rgb(179, 14, 216);
+    background-color: var(--btnBgHover);
 }
 
 .btnEntrar span{
@@ -94,5 +103,5 @@ body{
 
 .btnEntrar span a{
     text-decoration: none;
-    color: white;
+    color: var(--btnColor);
 }

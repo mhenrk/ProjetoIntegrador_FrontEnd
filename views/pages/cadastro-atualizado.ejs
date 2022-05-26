@@ -1,5 +1,5 @@
 <div class="container">
-    <form method="POST" action="#">
+    <form action="/dashboard/perfil/update" method="POST">
 
         <div class="form-content">
 
@@ -7,68 +7,68 @@
 
                 <div class="input-box">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Primeiro Nome" required>
+                    <input type="text" name="nome" placeholder="Nome" value="<%= user.nome%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Sobrenome" required>
+                    <input type="text" name="sobrenome" placeholder="Sobrenome" value="<%= user.sobrenome%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="Seu Email" required>
+                    <input type="email" name="email" placeholder="Email" value="<%= user.email%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-phone"></i>
-                    <input type="tel" placeholder="Informe seu telefone" required>
+                    <input type="tel" name="cpf" placeholder="CPF" value="<%= user.cpf%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-calendar"></i>
-                    <input type="date" placeholder="" required>
+                    <input type="date" name="datanasc"  value="<%= user.datanasc%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-pen"></i>
-                    <input type="text" placeholder="Informe seu CPF" required>
+                    <input type="text" name="telefone" placeholder="Telefone" value="<%= user.telefone%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-location-crosshairs"></i>
-                    <input id="cep" type="text" placeholder="Informe seu CEP" onblur="consultaCEP()" required>
+                    <input id="cep" type="text" name="cep" placeholder="CEP" value="<%= user.cep%>" onblur="">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-pen"></i>
-                    <input id="rua" type="text" placeholder="Endereço" disabled>
+                    <input id="rua" type="text" name="rua" placeholder="Rua" value="<%= user.rua%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-pen"></i>
-                    <input id="nr-complemento" type="text" placeholder="Numero - Complemento" required>
+                    <input id="nr-complemento" type="text" name="numero" placeholder="Numero" value="<%= user.numero%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-pen"></i>
-                    <input id="bairro" type="text" placeholder="Bairro" disabled>
+                    <input id="bairro" type="text" name="bairro" placeholder="Bairro" value="<%= user.bairro%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-pen"></i>
-                    <input id="cidade" type="text" placeholder="Cidade" disabled>
+                    <input id="cidade" type="text" name="cidade" placeholder="Cidade" value="<%= user.cidade%>">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-pen"></i>
-                    <input id="uf" type="text" placeholder="Estado" disabled>
+                    <input id="uf" type="text" name="estado" placeholder="Estado" value="<%= user.estado%>">
                 </div>
             </div>
 
             <div class="containner-btn">
                 <div class="btnEnviar">
-                    <input type="submit" placeholder="Enviar">
+                    <input type="submit" id="enviarBtn" placeholder="Enviar">
                 </div>
             </div>
         </div>

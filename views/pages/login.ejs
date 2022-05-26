@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <script src="https://kit.fontawesome.com/8738c5e42e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <link rel="stylesheet" href="/css/login.css" type="text/css">
     
     <title>
-        <%= title %>
+        Faça Login
     </title>
 
 </head>
@@ -32,6 +32,9 @@
                             <input type="password" name="password" placeholder="Digite sua senha" required>
                         </div>
                         <div class="text"><a href="esqueci-senha">Esqueceu sua senha?</a></div>
+                        <% if( erro ) { %>
+                            <p><%= erro %></p>
+                        <% } %>
                         <div class="button input-box">
                             <input type="submit" placeholder="Enviar">
                         </div>

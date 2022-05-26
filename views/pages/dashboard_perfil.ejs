@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/8738c5e42e.js" crossorigin="anonymous"></script>
 
     <title>
-        <%= title %>
+        Dashboard | Perfil
     </title>
 </head>
 
@@ -74,19 +74,19 @@
             <i class="fa-solid fa-bars sidebar-toggle"></i>
 
             <div class="profile">
-                <p>Bem vinda</p>
+                <p> Bem vindo(a) <%=session.userName%></p>
                 <img src="/img/dash-avatar.jpg" alt="profile">
             </div>
         </div>
 
         <!-- ATUALIZAÇÃO DO CADASTRO -->
         <%- include("cadastro-atualizado")%>
-            <!-- FIM ATUALIZAÇÃO DO CADASTRO -->
+        <!-- FIM ATUALIZAÇÃO DO CADASTRO -->
 
     </section>
 
     <script src="/js/sidebarToggle.js"></script>
-    <script src="/js/registro-viaCepAsync.js"></script>
+    <script src="/js/viaCepAsync.js"></script>
 </body>
 
 </html>

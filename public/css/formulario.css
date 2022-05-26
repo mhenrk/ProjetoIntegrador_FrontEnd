@@ -8,33 +8,32 @@
     --form-border: rgba(72, 71, 71, 0.25);
     --textoLabel: #000000;
     --textoInput: #000000;
+
+    --socialMedia: #523697;
+
+    --btnBg: #5b13b9;
+    --btnBgHover: #7d2ae8;
+    --btnColor: #ffffff;
+
+    --sectionIconColor: #5b13b9;
+    --sectionTextColor: #7d2ae8;
+    --sectionSubColor: #000000;
+
+    --borderColor: rgba(72, 71, 71, 0.25);
     --borderInput: rgba(128, 128, 128, 0.25);
     --borderInputFocus: rgb(255, 204, 21);
-    --btnColor: #ffffff;
-    --btnBg: rgb(170, 18, 181);
-    --btnBgHover: rgb(144, 15, 153);
-    --socialMedia: #523697;
 }
-
-/* 
-body {
-    width: 100vw;
-    height: 100vh;
-    border: 5px solid blue;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-} */
 
 .contato-container{
     margin: 0 auto;
     width: 80%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .contato-container .contato-header{
-    width: 60%;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     margin-left: 15px;
@@ -43,17 +42,18 @@ body {
 .contato-container .contato-header h2{
     font-size: 36px;
     margin: 15px 0;
+    color: var(--sectionTextColor);
 }
 
 .contato-container .contato-header .contato-social i{
     font-size: 36px;
     padding: 10px;
-    color: var(--socialMedia);
+    color: var(--sectionIconColor);
 }
 form {
     margin: 15px auto;
     width: 450px;
-    border: 1px solid var(--form-border);
+    border: 1px solid var(--borderColor);
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -71,7 +71,7 @@ label {
     font-weight: 700;
     padding: 5px 0;
     text-transform: uppercase;
-    color: var(--textoLabel);
+    color: var(--sectionTextColor);
 }
 
 input {
@@ -82,7 +82,7 @@ input {
     padding: 0 10px;
     border: none;
     border-bottom: 2px solid var(--borderInput);
-    color: var(--textoInput);
+    color: var(--sectionTextColor);
 }
 
 input:active,
@@ -107,7 +107,7 @@ button {
     width: 250px;
     border: none;
     background: var(--btnBg);
-    color: white;
+    color: var(--btnColor);
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;

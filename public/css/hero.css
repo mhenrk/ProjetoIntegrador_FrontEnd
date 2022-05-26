@@ -1,5 +1,19 @@
+:root{
+    --brancoBg: #ffffff;
+    --navlinkBar: #5b13b9;
+
+    --btnBg: #7d2ae8;
+    --btnBgHover: #7d2ae8;
+    --btnColor: #ffffff;
+
+    --sectionIconColor: #5b13b9;
+    --sectionTextColor: #5b13b9;
+    --sectionSubColor: #000000;
+
+    --borderColor: rgba(128, 128, 128, 0.60);
+}
+
 .hero{
-    
     width: 100vw;
 }
 
@@ -19,13 +33,14 @@
 .hero-titulo h2{
     font-size: 36px;
     font-weight: 700;
+    color: var(--sectionTextColor);
     font-family: sans-serif;
 }
 
 .hero-titulo span{
     display: block;
     border: 1px solid transparent;
-    background: tomato;
+    background: var(--btnBg);
     text-align: center;
     width: 200px;
     height: 50px;
@@ -42,7 +57,7 @@
 
 .saibamais a{
     text-decoration: none;
-    color: white;
+    color: var(--btnColor);
 }
 
 .hero-titulo span p{

@@ -2,6 +2,18 @@
 
 :root{
     --montserrat: 'Montserrat', sans-serif;
+    --brancoBg: #ffffff;
+    --navlinkBar: #5b13b9;
+
+    --btnBg: #7d2ae8;
+    --btnBgHover: #7d2ae8;
+    --btnColor: #ffffff;
+
+    --sectionIconColor: #5b13b9;
+    --sectionTextColor: #5b13b9;
+    --sectionSubColor: #000000;
+
+    --borderColor: rgba(128, 128, 128, 0.60);
 }
 
 * {
@@ -13,33 +25,36 @@
 
 .container-sobre{
     display: flex;
-    flex-wrap: wrap;
     width: 80%;
     flex-direction: column;
     justify-content: center;
     margin: 15px auto;
+
 }
 
 .container-sobre h2{
     font-size: 36px;
+    color: var(--sectionTextColor);
     padding: 10px;
     margin: 10px 0;
     margin-left: 10px;
-    border-left: 8px solid blue;
+    border-left: 8px solid var(--sectionIconColor);
 }
 
-.container-sobre .card-container{
+.card-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .container-sobre .sobre-card{
-    border: 1px solid gray;
-    border-bottom: 5px solid blue;
+    border: 1px solid var(--borderColor);
+    border-bottom: 5px solid var(--sectionIconColor);
     max-width: 350px;
     height: 350px;
-    width: calc(100% / 3 - 20px);
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +64,7 @@
 }
 
 .sobre-card span{
-    background: red;
+    background: var(--sectionIconColor);
     margin: 15px 0;
     padding: 15px;
     border-radius: 50%;
@@ -57,11 +72,12 @@
 
 .sobre-card i{
     font-size: 36px;
-    color: white;
+    color: var(--brancoBg);
 }
 
 .sobre-card p{
     text-align: justify;
+    overflow: hidden;
     padding: 15px;
     font-size: 16px;
 }

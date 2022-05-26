@@ -2,65 +2,25 @@ const express = require('express')
 const routes = express.Router()
 
 const dashboardController = require('../controller/DashboardController')
+const petController = require('../controller/PetController')
 
 /** /dashboard */
-routes.get('/', (req, res) => {
-    res.status(200).render('dashboard', {
-        title: 'Dashboard | DH Anymals'
-    })
-})
+routes.get('/', dashboardController.index)
 
-routes.get('/admin', (req, res) => {
-    res.status(200).render('dashboard' , {
-        title: 'Dashboard Admin | DH Anymals'
-    })
-})
+routes.get('/perfil', dashboardController.profile)
+routes.post('/perfil/update', dashboardController.profileUpdate)
 
-/** /dashboard/perfil */
-routes.get('/perfil', (req, res) => {
-    res.status(200).render('dashboard_perfil' , {
-        title: 'Dashboard Admin | Perfil'
-    })
-})
-
-routes.get('/admin/perfil', (req, res) => {
-    res.status(200).render('dashboard_perfil' , {
-        title: 'Dashboard Admin | Perfil'
-    })
-})
-
-/** /dashboard/pet */
 routes.get('/pet', dashboardController.showUserPets)
-// routes.get('/pet', (req, res) => {
-//     res.status(200).render('dashboard_pet' , {
-//         title: 'Dashboard | Pet'
-//     })
-// })
 
-routes.get('/admin/pet', (req, res) => {
-    res.status(200).render('dashboard_pet' , {
-        title: 'Dashboard Admin | Pet'
-    })
-})
+routes.get('/pet/add', petController.index)
+routes.post('/pet/add', petController.store)
 
-/** /dashboard/parceiro */
+routes.post('/pet/update/', petController.buscaPetId)
+routes.post('/pet/update/:id', petController.storePet)
+
 routes.get('/parceiro', dashboardController.showParceiros)
-// routes.get('/parceiro', (req, res) => {
-//     res.status(200).render('dashboard_parceiro' , {
-//         title: 'Dashboard | Parceiros'
-//     })
-// })
 
-routes.get('/admin/parceiro', (req, res) => {
-    res.status(200).render('dashboard_parceiro' , {
-        title: 'Dashboard Admin | Parceiros'
-    })
-})
-
-/** /dashboard/logout */
-routes.get('/logout', (req, res) => {
-    res.session = ""
-    res.status(200).redirect('/')
-})
+routes.get('/logout', dashboardController.logout)
+routes.get('/close', dashboardController.close)
 
 module.exports = routes

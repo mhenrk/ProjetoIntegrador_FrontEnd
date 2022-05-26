@@ -5,16 +5,14 @@ module.exports = {
 
     index(req, res) {
         // res.status(200).json({message: "logando.. aguarde"})
-        res.status(200).render("esqueci-senha", {
-            title: "Esqueci Minha Senha"
+        res.render("esqueci-senha", {
+            erro: ''
         })
     },
 
     recover(req, res) {
         // res.status(200).json({message: "logando.. aguarde"})
-        res.status(200).render("recupera-senha", {
-            title: "Recuperar Senha"
-        })
+        return res.render('recuperar-senha')
     },
 
     async findEmail(req, res) {
@@ -23,11 +21,20 @@ module.exports = {
         await axios.post(`${process.env.BACKEND_URL}/usuario/finduser`, email)
             .then(response => {
 
-                const data = response.data
-                res.redirect('/recuperar-senha')
-                res.status(200).send(data)
-
+                if (response.data) {
+                    const data = response.data
+                    return res.status(200).redirect('/recuperar-senha')
+                }else{
+                    res.render('esqueci-senha', {
+                        erro: 'Email não encontrado / cadastrado'
+                    })
+                }
             })
-            .catch(e => console.log(`Ocorreu um erro: ${e}`))
+            .catch(e => {
+                console.log(`Ocorreu um erro: ${e}`)
+                res.render('esqueci-senha', {
+                    erro: 'Email não encontrado / cadastrado'
+                })
+            })
     }
 }

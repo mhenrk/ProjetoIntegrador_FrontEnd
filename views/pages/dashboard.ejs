@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/8738c5e42e.js" crossorigin="anonymous"></script>
 
     <title>
-        <%= title %>
+        Dashboard | Anymals
     </title>
 </head>
 
@@ -74,13 +74,61 @@
             <i class="fa-solid fa-bars sidebar-toggle"></i>
 
             <div class="profile">
-                <p> Bem vindo(a)</p>
+                <p> Bem vindo(a) <%=session.userName%></p>
                 <img src="/img/dash-avatar.jpg" alt="profile">
             </div>
         </div>
 
         <!-- CARD CENTRAL -->
+        <div class="dashboxes">
+            <div class="dashboxes-top">
+                <div class="box-info user">
+                    <h2>123128</h2>
+                    <p>Usuários Cadastrados</p>
+                </div>
+                <div class="box-info pet">
+                    <h2>123128</h2>
+                    <p>Pets Cadastrados</p>
+                </div>
+                <div class="box-info parceiro">
+                    <h2>123128</h2>
+                    <p>Parceiros Cadastrados</p>
+                </div>
+            </div>
+            <div class="info-cards">
 
+                <div class="dashcards">
+                    <div class="card-info">
+                        <h3>Usuários</h3>
+                        <div class="listagem">
+                            <p>Nome</p>
+                            <p>email</p>
+                            <p>telefone</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashcards">
+                    <div class="card-info">
+                        <h3>Pets</h3>
+                        <div class="listagem">
+                            <p>Nome</p>
+                            <p>Raça</p>
+                            <p>Tipo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashcards">
+                    <div class="card-info">
+                        <h3>Parceiros</h3>
+                        <div class="listagem">
+                            <p>Nome</p>
+                            <p>email</p>
+                            <p>telefone</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- FIM CARD CENTRAL -->
 
     </section>

@@ -4,65 +4,57 @@ module.exports = {
 
     index(req, res) {
         // res.status(200).json({message: "logando.. aguarde"})
-        res.status(200).render("login", {
-            title: "Faça Login"
+        res.render('login', {
+            erro: ''
         })
     },
 
     auth(req, res) {
         const userLogin = {
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
         }
 
-        // const options = {
-        //     method: "POST",
-        //     headers: {
-        //         "Authorization": `Bearer ${token}`,
-        //     }
-
-        // }
+        
 
         axios.post(`${process.env.BACKEND_URL}/token`, userLogin)
             .then(response => {
-                const { id, email, token, is_admin } = response.data
 
-                req.session.user = {
-                    id,
-                    email,
-                    token
-                }
+                const { id, email, nome, token, is_admin } = response.data
 
                 if (res.statusCode === 200 && is_admin) {
+
+                    req.session.userID = id
+                    req.session.userEmail = email
+                    req.session.userName = nome
+                    req.session.userToken = token
                     req.session.autenticated = true
-                    // console.log(`Session: ${req.sessionID} é Admin? ${is_admin}`)
-                    res.render('/dashboard/admin', {
-                        title: 'Dashboard Admin | DH Anymals',
-                        email: req.session.user.email
-                    })
+                    res.redirect('/dashboard/admin')
+
                 } else if (res.statusCode === 200 && !is_admin) {
 
-                    // console.log(`Session: ${req.sessionID} é Admin? ${is_admin}`)
+                    req.session.userID = id
+                    req.session.userEmail = email
+                    req.session.userName = nome
+                    req.session.userToken = token
 
-                    res.render('dashboard', {
-                        title: 'Dashboard | DH Anymals',
-                        email: req.session.user
+                    console.log(req.session.userID ,  req.session.userEmail , req.session.userName , req.session.userToken)
+
+                    return res.render('dashboard', {
+                        session: req.session
                     })
+
                 } else {
-
-                    // console.log(`Session: ${req.sessionID} é Admin? ${is_admin}`)
-
-                    res.status(403).send({
-                        message: 'Usuário / Senha Inválidos'
+                    res.render('login', {
+                        erro: 'Usuário / Senha Inválido'
                     })
                 }
 
-            }).catch(erro => console.log(erro.message))
-    },
-
-    logout(req, res) {
-        req.session = ""
-        res.redirect("/")
-    }
-
+            }).catch(erro => {
+                console.log(erro.message)
+                res.render('login', {
+                    erro: 'Usuário / Senha Inválido'
+                })
+            })
+    }    
 }
